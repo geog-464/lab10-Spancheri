@@ -1,33 +1,78 @@
+/// Script done by Sara Pancheri, April 1-8 2022
+
 <!DOCTYPE html>
+
 <html lang="en">
+
     <head>
+
         <meta charset="utf-8">
+
         <meta name="viewport" content="width=device-width">
-        <title>lab9</title>
+
+        <title>Lab 10</title>
         
 		<!--put your external stylesheet links here-->
 		<link rel="stylesheet" href="css/styles.css">
+
 		<!-- link to leaflet styles -->
 		<link rel="stylesheet" type="text/css" href="lib/leaflet/leaflet.css" />
+
 		<!-- link to leaflet scripts -->
 		<script type="text/javascript" src="lib/leaflet/leaflet.js"></script>
 
-		<!--you can also place internal styles here; you would place these within <style> tags-->
+
     </head>
 
     <body>
         <!--put your initial page content here-->
 		<div id="div1">
-		</div>
-		<div id="mapdiv">
-			
-		</div>
-		
-        <!--you can also use this space for internal scripts; you would place these within <script> tags-->
 
-        
+			<p><b>Q1: Use the free tileset providers reference to add a new tilelayer of your choice to your map.</b><br>
+
+            <i>Seen in the map below</i></p>
+
+			<p><b>Q2: What is happening in the styleAll function? Explain what the styles variable is and what it contains, what the conditional statement is doing and what gets returned by the function.</b><br>
+
+			<i>The 'styleAll' function takes the features you pass through it (in this case, our placemarks) and stylizes them. It can change the colour, size, zoom level, opacity, etc. of the placemark. The variable 'styles' shows object-key-value pairs that define the style elements and puts them at default settings (to be changed with dot notation within the if statement)</i></p>
+
+			<p><b>Q3: Add a conditional statement to your styleAll function that will style the fillColor of features containing a Canadian postal code. Use the colour 'cyan' instead of '#fff' for these.</b><br>
+
+			<i>Seen in the map below</i></p>
+
+			<p><b>Q4:What is feature and what is layer here? What do they refer to?</b><br>
+
+			<i>The feature is the point data about the trains (Address, ZipCode, etc.), whilst the layer is the visual representation of the data (styling, etc.)</i></p>
+
+			<p><b>Q5:What is the fundamental difference between layer.options.fill and layer.getLatLng(), beyond the fact that they return different pieces of information?</b><br>
+
+			<i>The fundamental difference, beyond the fact that 'layer.options.fill' returns a Boolean and 'layer.getLatLng()' returns an object,is that<br>
+
+				<u>layer.options.fill</u>: a path class that contains option/constants shared between vector overlays. The fill method determines whether or not to fill the path with colour (T/F)- putting it to false disables it from adding colour to a path.<br>
+				<u>layer.getLatLng()</u>: this method returns the latitude and longitude (Current geographical position) of a marker. It directly applies to markers, which are clickable/draggable icons on a map.<br></i></p>
+
+			<p><b>Q6: Reload your web browser... What happened!?</b><br>
+
+			<i>Putting the 'layer.options.fill' to false makes the circle have no fill and changing the value of 'layer._radius' to 80 will make the placemarkers very big.</i></p></br>
+
+		</div>
+
+		<div id="mapdiv">
+
+			<select class="li-nav" name="mapdropdown" id="mapdropdown" onChange="loadMap(this.value);">
+
+				<option value="map0" selected="selected" disabled>Load a map</option>
+
+				<option value='mapa'>Amtrak Stations</option>
+
+				<option value='mapb'>Mega Cities</option>
+
+			</select>
+		</div>
+	
 		
 		<!--put your external script links here-->
         <script type="text/javascript" src="js/main.js"></script>
+
     </body>
 </html>
